@@ -33,3 +33,6 @@ class Robot():
             for pos in routine.lisPos:
                 self.goPosition(pos)
             self.goPosition(routine.posInit)
+    
+    def dance(self):
+        return 'je dance'

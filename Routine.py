@@ -37,3 +37,16 @@ class Routine():
             5,
             5
         )
+    
+    def Looping(self):
+        self.posInit = Position(
+            {
+                'm1': 0,
+                'm2': 90,
+                'm3': 90,
+                'm4': 0,
+                'm5': 180
+            },
+            5,
+            5
+        )
