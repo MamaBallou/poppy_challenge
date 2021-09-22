@@ -1,6 +1,6 @@
 # coding: utf8
-from Challenge.Routine import Routine
-from Challenge.Position import Position
+from Routine import Routine
+from Position import Position
 from _typeshed import Self
 from pypot.creatures import PoppyErgoJr
 import time
