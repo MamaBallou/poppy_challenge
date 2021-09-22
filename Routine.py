@@ -1,13 +1,23 @@
 # coding: utf8
-from Challenge.Position import Position
+from Position import Position
 
 
 class Routine():
-    def __init__(self, lisPos: list, posInit: Position, nbRep: int = 1) -> None:
+    """A Routine is a sequence of positions repeated a designed number of time.
+
+    :param list listPos: List of the positions the routine has to move at.
+    :param Position posInit: Initial position of the routine.
+    :param int npRep: Number of time the routine is repeated."""
+
+    def __init__(self, lisPos: list, posInit: Position,
+                 nbRep: int = 1) -> None:
+        """Constructor"""
         self.lisPos = lisPos
         self.posInit = posInit
         self.nbRep = nbRep
 
     def __del__(self):
-        del self.lisPos
+        """Destructor"""
+        for pos in self.lisPos:
+            del pos
         del self.posInit
