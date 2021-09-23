@@ -39,7 +39,7 @@ class Robot():
         # Wait the designated time.
         time.sleep(position.tempsAtt)
 
-    def doRoutine(self, routine: Routine):
+    def doRoutine(self, routine: Routine) -> None:
         """Execute de routine.
 
         :param Routine routine: Routine to execute.
@@ -53,3 +53,14 @@ class Robot():
                 self.goPosition(pos)
             # End, go back to initial position.
             self.goPosition(routine.posInit)
+
+    
+    def dance(self) -> None:
+        """Execute the choregraphy."""
+        # Read each instruction of choregraphy.
+        for item in self.choregraphy:
+            # Check type of item & use according function.
+            if (isinstance(item, Position)):
+                self.goPosition(item)
+            elif (isinstance(item, Routine)):
+                self.doRoutine(item)
