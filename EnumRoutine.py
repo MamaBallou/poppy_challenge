@@ -4,6 +4,9 @@ from EnumPosition import EnumPosition
 
 
 class EnumRoutine(Enum):
+    """Enumeration of Routine."""
+
+    # Shaking you up and down while turning.
     SHAKER = Routine(
         None,
         [
@@ -18,15 +21,17 @@ class EnumRoutine(Enum):
         1
     )
 
+    # Start head up, finish head down.
     LOOPING = Routine(
         None,
         [
             EnumPosition.POS_DEP_LOOPING,
             EnumPosition.POS_ARR_LOOPING
         ],
-        1
+        2
     )
 
+    # Close to the floor and left/right movements.
     BALAYAGE = Routine(
         None,
         [
@@ -38,6 +43,7 @@ class EnumRoutine(Enum):
         1
     )
 
+    # Ocilating while turning.
     PENDULE = Routine(
         None,
         [
@@ -52,6 +58,7 @@ class EnumRoutine(Enum):
         1
     )
 
+    # Suspens routine before big start.
     WAIT4IT = Routine(
         None,
         [
@@ -62,10 +69,11 @@ class EnumRoutine(Enum):
         1
     )
 
+    # Turning while looking to the sky.
     SKY_MOULINETTE = Routine(
         None,
         [
             EnumPosition.POS_DEP_SKYMOULINETTE,
-            EnumPosition.POS_SKYWATCHING
+            EnumPosition.POS_ARR_SKYMOULINETTE
         ]
     )

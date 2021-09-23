@@ -3,6 +3,8 @@ from Position import Position
 
 
 class EnumPosition(Enum):
+    """Enumeration of all the Positions."""
+    # Initial position.
     POS_INIT = Position(
         dicMotors={
             'm1': 0,
@@ -16,6 +18,7 @@ class EnumPosition(Enum):
         time2Wait=2
     )
 
+    # Reverse position, head upside down.
     POS_REVERSE = Position(
         dicMotors={
             'm1': 0,
@@ -29,6 +32,7 @@ class EnumPosition(Enum):
         time2Wait=3
     )
 
+    # Sky watching, looking to the sky.
     POS_SKYWATCHING = Position(
         dicMotors={
             'm1': 0,
@@ -38,10 +42,11 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=2,
+        time2Move=5,
         time2Wait=3
     )
 
+    # Looking to the sky in diagonal.
     POS_PLONGEUR = Position(
         dicMotors={
             'm1': 0,
@@ -51,10 +56,11 @@ class EnumPosition(Enum):
             'm5': -45,
             'm6': 0
         },
-        time2Move=2,
+        time2Move=7,
         time2Wait=2
     )
 
+    # Start head up to end head down.
     POS_DEP_LOOPING = Position(
         dicMotors={
             'm1': 0,
@@ -64,7 +70,7 @@ class EnumPosition(Enum):
             'm5': 90,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=7,
         time2Wait=0
     )
 
@@ -77,7 +83,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=7,
         time2Wait=0
     )
 
@@ -92,11 +98,11 @@ class EnumPosition(Enum):
             'm5': 0,
             'm6': 0
         },
-        time2Move=3,
+        time2Move=5,
         time2Wait=0
     )
 
-    # first sheck
+    # The sheck stences
     POS_INTER_01_SHECKER = Position(
         dicMotors={
             'm1': -100,
@@ -106,7 +112,7 @@ class EnumPosition(Enum):
             'm5': 90,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=3,
         time2Wait=0
     )
 
@@ -119,7 +125,7 @@ class EnumPosition(Enum):
             'm5': 0,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=3,
         time2Wait=0
     )
 
@@ -132,7 +138,7 @@ class EnumPosition(Enum):
             'm5': 90,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=3,
         time2Wait=0
     )
 
@@ -145,7 +151,7 @@ class EnumPosition(Enum):
             'm5': 0,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=3,
         time2Wait=0
     )
 
@@ -158,7 +164,7 @@ class EnumPosition(Enum):
             'm5': 90,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=3,
         time2Wait=0
     )
 
@@ -171,10 +177,12 @@ class EnumPosition(Enum):
             'm5': 0,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=3,
         time2Wait=0
     )
 
+    # Positions for balayage.
+    # Close to the floor without touching it and left/right movements.
     POS_DEP_BALAYAGE = Position(
         dicMotors={
             'm1': 0,
@@ -184,7 +192,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=3,
         time2Wait=0
     )
 
@@ -197,7 +205,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=3,
         time2Wait=0
     )
 
@@ -210,10 +218,11 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=2,
+        time2Move=6,
         time2Wait=0
     )
 
+    # Ocilating while turning.
     POS_DEP_PENDULE = Position(
         dicMotors={
             'm1': -150,
@@ -223,7 +232,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=3,
+        time2Move=10,
         time2Wait=1
     )
 
@@ -236,7 +245,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=4,
         time2Wait=0
     )
 
@@ -249,7 +258,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=4,
         time2Wait=0
     )
 
@@ -262,7 +271,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=4,
         time2Wait=0
     )
 
@@ -275,7 +284,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=4,
         time2Wait=0
     )
 
@@ -288,7 +297,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=4,
         time2Wait=0
     )
 
@@ -301,10 +310,11 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=4,
         time2Wait=0
     )
 
+    # Suspens positions before the big start.
     POS_DEP_WAIT4IT = Position(
         dicMotors={
             'm1': 0,
@@ -327,7 +337,7 @@ class EnumPosition(Enum):
             'm5': 0,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=2,
         time2Wait=0
     )
 
@@ -340,10 +350,11 @@ class EnumPosition(Enum):
             'm5': -45,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=2,
         time2Wait=0
     )
 
+    # Turning while watching the sky.
     POS_DEP_SKYMOULINETTE = Position(
         dicMotors={
             'm1': -90,
@@ -353,6 +364,19 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=1,
+        time2Move=10,
+        time2Wait=0
+    )
+
+    POS_ARR_SKYMOULINETTE = Position(
+        dicMotors={
+            'm1': 90,
+            'm2': 0,
+            'm3': 0,
+            'm4': -90,
+            'm5': -90,
+            'm6': 0
+        },
+        time2Move=10,
         time2Wait=0
     )

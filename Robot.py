@@ -22,12 +22,13 @@ class Robot():
             EnumRoutine.WAIT4IT,
             EnumRoutine.BALAYAGE,
             EnumRoutine.LOOPING,
-            EnumRoutine.SHAKER,
+            EnumPosition.POS_REVERSE,
+            EnumRoutine.PENDULE,
             EnumPosition.POS_SKYWATCHING,
             EnumRoutine.SKY_MOULINETTE,
-            EnumRoutine.PENDULE,
             EnumPosition.POS_PLONGEUR,
-            EnumPosition.POS_REVERSE
+            EnumRoutine.SHAKER,
+            EnumRoutine.LOOPING
         ]
         self.poppy = poppy
 
