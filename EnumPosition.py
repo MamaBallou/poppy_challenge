@@ -34,7 +34,7 @@ class EnumPosition(Enum):
             'm1': 0,
             'm2': 0,
             'm3': 0,
-            'm4': 180,
+            'm4': 0,
             'm5': -90,
             'm6': 0
         },
@@ -302,5 +302,57 @@ class EnumPosition(Enum):
             'm6': 0
         },
         time2Move=0.5,
+        time2Wait=0
+    )
+
+    POS_DEP_WAIT4IT = Position(
+        dicMotors={
+            'm1': 0,
+            'm2': 0,
+            'm3': -45,
+            'm4': 0,
+            'm5': 0,
+            'm6': 0
+        },
+        time2Move=3,
+        time2Wait=1
+    )
+
+    POS_1_WAIT4IT = Position(
+        dicMotors={
+            'm1': 0,
+            'm2': 0,
+            'm3': 0,
+            'm4': 0,
+            'm5': 0,
+            'm6': 0
+        },
+        time2Move=1,
+        time2Wait=0
+    )
+
+    POS_ARR_WAIT4IT = Position(
+        dicMotors={
+            'm1': 0,
+            'm2': 0,
+            'm3': 45,
+            'm4': 0,
+            'm5': -45,
+            'm6': 0
+        },
+        time2Move=1,
+        time2Wait=0
+    )
+
+    POS_DEP_SKYMOULINETTE = Position(
+        dicMotors={
+            'm1': -90,
+            'm2': 0,
+            'm3': 0,
+            'm4': -90,
+            'm5': -90,
+            'm6': 0
+        },
+        time2Move=1,
         time2Wait=0
     )

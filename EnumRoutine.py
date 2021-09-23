@@ -51,3 +51,21 @@ class EnumRoutine(Enum):
         ],
         1
     )
+
+    WAIT4IT = Routine(
+        None,
+        [
+            EnumPosition.POS_DEP_WAIT4IT,
+            EnumPosition.POS_1_WAIT4IT,
+            EnumPosition.POS_ARR_WAIT4IT
+        ],
+        1
+    )
+
+    SKY_MOULINETTE = Routine(
+        None,
+        [
+            EnumPosition.POS_DEP_SKYMOULINETTE,
+            EnumPosition.POS_SKYWATCHING
+        ]
+    )

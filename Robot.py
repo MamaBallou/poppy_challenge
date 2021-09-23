@@ -3,7 +3,7 @@ from Routine import Routine
 from Position import Position
 from _typeshed import Self
 from pypot.creatures import PoppyErgoJr
-import time
+import time, EnumPosition, EnumRoutine
 
 
 class Robot():
@@ -13,9 +13,19 @@ class Robot():
     :param PoppyErgoJr poppy: PoppyErgoJr robot object.
     """
 
-    def __init__(self, choregraphy: list, poppy: PoppyErgoJr) -> None:
+    def __init__(self, poppy: PoppyErgoJr) -> None:
         """Constructor"""
-        self.choregraphy = choregraphy
+        self.choregraphy = [
+            EnumRoutine.WAIT4IT,
+            EnumRoutine.BALAYAGE,
+            EnumRoutine.LOOPING,
+            EnumRoutine.SHAKER,
+            EnumPosition.POS_SKYWATCHING,
+            EnumRoutine.SKY_MOULINETTE,
+            EnumRoutine.PENDULE,
+            EnumPosition.POS_PLONGEUR,
+            EnumPosition.POS_REVERSE
+        ]
         self.poppy = poppy
 
     def goPosition(self, position: Position) -> None:
@@ -45,14 +55,14 @@ class Robot():
         :param Routine routine: Routine to execute.
         """
         # Go to starting position of the routine.
-        self.goPosition(routine.posInit)
+        # self.goPosition(routine.posInit)
         # Repeat the designated time the routine.
         for _ in range(routine.nbRep):
             # Going threw each steps of the routine.
             for pos in routine.lisPos:
                 self.goPosition(pos)
             # End, go back to initial position.
-            self.goPosition(routine.posInit)
+            # self.goPosition(routine.posInit)
 
     
     def dance(self) -> None:
