@@ -37,6 +37,7 @@ class Robot():
         :param Position position: Position to move at.
         """
         print("goPosition(%s)", position.name)
+        # Extracting Position from EnumPosition
         position = position.value
         # Making motors move and last wait its end to continu program.
         self.poppy.m1.goto_position(
@@ -60,27 +61,24 @@ class Robot():
         :param Routine routine: Routine to execute.
         """
         print("doRoutine(%s)", routine.name)
+        # Extracting Routine from EnumRoutine
         routine = routine.value
-        # Go to starting position of the routine.
-        # self.goPosition(routine.posInit)
         # Repeat the designated time the routine.
         for _ in range(routine.nbRep):
             # Going threw each steps of the routine.
-            print(routine.lisPos)
             for pos in routine.lisPos:
                 self.goPosition(pos)
-            # End, go back to initial position.
-            # self.goPosition(routine.posInit)
 
-    
     def dance(self) -> None:
         """Execute the choregraphy."""
-        # Read each instruction of choregraphy.
+        # Go to initial position
         self.goPosition(EnumPosition.POS_INIT)
+        # Read each instruction of choregraphy.
         for item in self.choregraphy:
             # Check type of item & use according function.
             if (isinstance(item.value, Position)):
                 self.goPosition(item)
             elif (isinstance(item.value, Routine)):
                 self.doRoutine(item)
+        # Go backto initial position
         self.goPosition(EnumPosition.POS_INIT)
