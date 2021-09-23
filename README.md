@@ -39,12 +39,12 @@ A3 FISE 2021-2022
 12. Pos pivoté 2s, 0s
 ### Pendule 3.5s
 18. Pos init 1s
-14. Pos 1 0.5s, 0s
-15. Pos 2 0.5s, 0s
-15. Pos 3 0.5s, 0s
-16. Pos 4 0.5s, 0s
-17. Pos 5 0.5s, 0s
+14. Pos 1 1s, 0s
+15. Pos 2 1s, 0s
+15. Pos 3 1s, 0s
+16. Pos 4 1s, 0s
+17. Pos 5 1s, 0s
 ### Plongeur 4s
 19. Pos 2s, 2s
-### Reverse 5s 41.5s
+### Reverse 5s 44s
 20. Pos 2s, 3s

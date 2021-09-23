@@ -1,6 +1,6 @@
 from enum import Enum
-import Routine
-import EnumPosition
+from Routine import Routine
+from EnumPosition import EnumPosition
 
 
 class EnumRoutine(Enum):

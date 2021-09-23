@@ -1,5 +1,5 @@
 from enum import Enum
-import Position
+from Position import Position
 
 
 class EnumPosition(Enum):
@@ -236,7 +236,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=0.5,
+        time2Move=1,
         time2Wait=0
     )
 
@@ -249,7 +249,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=0.5,
+        time2Move=1,
         time2Wait=0
     )
 
@@ -262,7 +262,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=0.5,
+        time2Move=1,
         time2Wait=0
     )
 
@@ -275,7 +275,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=0.5,
+        time2Move=1,
         time2Wait=0
     )
 
@@ -288,7 +288,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=0.5,
+        time2Move=1,
         time2Wait=0
     )
 
@@ -301,7 +301,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=0.5,
+        time2Move=1,
         time2Wait=0
     )
 
@@ -349,7 +349,7 @@ class EnumPosition(Enum):
             'm1': -90,
             'm2': 0,
             'm3': 0,
-            'm4': -90,
+            'm4': 90,
             'm5': -90,
             'm6': 0
         },
