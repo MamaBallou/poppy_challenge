@@ -167,8 +167,8 @@ class EnumPosition(Enum):
             'm1':150,
             'm2':0,
             'm3': 0,
-            'm4': 0,
-            'm5': 90,
+            'm4': 120,
+            'm5': 0,
             'm6': 0
         },
         time2Move=5,
