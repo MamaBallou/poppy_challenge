@@ -36,7 +36,7 @@ A3 FISE 2021-2022
 10. Pos init Sky watching 2s, 3s
 ### Sky moulinette 3s
 11. pos init sky watching pivoté 1s, 0s
-12. Pos pivoté 2s, 0s
+12. pos retour sky watching pigoté 2s, 0s
 ### Pendule 3.5s
 18. Pos init 1s
 14. Pos 1 1s, 0s

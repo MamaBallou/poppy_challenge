@@ -14,7 +14,7 @@ class EnumPosition(Enum):
             'm5': 0,
             'm6': 0
         },
-        time2Move=5,
+        time2Move=3,
         time2Wait=2
     )
 
@@ -28,7 +28,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=2,
+        time2Move=0.1,
         time2Wait=3
     )
 
@@ -42,7 +42,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=5,
+        time2Move=2,
         time2Wait=3
     )
 
@@ -56,7 +56,7 @@ class EnumPosition(Enum):
             'm5': -45,
             'm6': 0
         },
-        time2Move=7,
+        time2Move=2,
         time2Wait=2
     )
 
@@ -70,7 +70,7 @@ class EnumPosition(Enum):
             'm5': 90,
             'm6': 0
         },
-        time2Move=7,
+        time2Move=1,
         time2Wait=0
     )
 
@@ -83,7 +83,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=7,
+        time2Move=1,
         time2Wait=0
     )
 
@@ -98,7 +98,7 @@ class EnumPosition(Enum):
             'm5': 0,
             'm6': 0
         },
-        time2Move=5,
+        time2Move=3,
         time2Wait=0
     )
 
@@ -112,7 +112,7 @@ class EnumPosition(Enum):
             'm5': 90,
             'm6': 0
         },
-        time2Move=3,
+        time2Move=0.75,
         time2Wait=0
     )
 
@@ -125,7 +125,7 @@ class EnumPosition(Enum):
             'm5': 0,
             'm6': 0
         },
-        time2Move=3,
+        time2Move=0.75,
         time2Wait=0
     )
 
@@ -138,7 +138,7 @@ class EnumPosition(Enum):
             'm5': 90,
             'm6': 0
         },
-        time2Move=3,
+        time2Move=0.75,
         time2Wait=0
     )
 
@@ -151,7 +151,7 @@ class EnumPosition(Enum):
             'm5': 0,
             'm6': 0
         },
-        time2Move=3,
+        time2Move=0.75,
         time2Wait=0
     )
 
@@ -164,7 +164,7 @@ class EnumPosition(Enum):
             'm5': 90,
             'm6': 0
         },
-        time2Move=3,
+        time2Move=0.75,
         time2Wait=0
     )
 
@@ -177,7 +177,7 @@ class EnumPosition(Enum):
             'm5': 0,
             'm6': 0
         },
-        time2Move=3,
+        time2Move=0.75,
         time2Wait=0
     )
 
@@ -192,7 +192,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=3,
+        time2Move=1,
         time2Wait=0
     )
 
@@ -205,7 +205,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=3,
+        time2Move=2,
         time2Wait=0
     )
 
@@ -218,7 +218,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=6,
+        time2Move=2,
         time2Wait=0
     )
 
@@ -232,7 +232,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=10,
+        time2Move=1,
         time2Wait=1
     )
 
@@ -245,7 +245,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=4,
+        time2Move=1,
         time2Wait=0
     )
 
@@ -258,7 +258,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=4,
+        time2Move=1,
         time2Wait=0
     )
 
@@ -271,7 +271,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=4,
+        time2Move=1,
         time2Wait=0
     )
 
@@ -284,7 +284,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=4,
+        time2Move=1,
         time2Wait=0
     )
 
@@ -297,7 +297,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=4,
+        time2Move=1,
         time2Wait=0
     )
 
@@ -310,7 +310,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=4,
+        time2Move=1,
         time2Wait=0
     )
 
@@ -324,7 +324,7 @@ class EnumPosition(Enum):
             'm5': 0,
             'm6': 0
         },
-        time2Move=3,
+        time2Move=1.5,
         time2Wait=1
     )
 
@@ -337,7 +337,7 @@ class EnumPosition(Enum):
             'm5': 0,
             'm6': 0
         },
-        time2Move=2,
+        time2Move=0.5,
         time2Wait=0
     )
 
@@ -350,7 +350,7 @@ class EnumPosition(Enum):
             'm5': -45,
             'm6': 0
         },
-        time2Move=2,
+        time2Move=0.5,
         time2Wait=0
     )
 
@@ -364,7 +364,7 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=10,
+        time2Move=1,
         time2Wait=0
     )
 
@@ -377,6 +377,6 @@ class EnumPosition(Enum):
             'm5': -90,
             'm6': 0
         },
-        time2Move=10,
+        time2Move=2,
         time2Wait=0
     )

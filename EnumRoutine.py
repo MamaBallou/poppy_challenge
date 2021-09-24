@@ -17,8 +17,7 @@ class EnumRoutine(Enum):
             EnumPosition.POS_INTER_04_SHECKER,
             EnumPosition.POS_INTER_05_SHECKER,
             EnumPosition.POS_ARR_SHECKER
-        ],
-        1
+        ]
     )
 
     # Start head up, finish head down.
@@ -27,8 +26,7 @@ class EnumRoutine(Enum):
         [
             EnumPosition.POS_DEP_LOOPING,
             EnumPosition.POS_ARR_LOOPING
-        ],
-        2
+        ]
     )
 
     # Close to the floor and left/right movements.
@@ -39,8 +37,7 @@ class EnumRoutine(Enum):
             EnumPosition.POS_1_BALAYAGE,
             EnumPosition.POS_ARR_BALAYAGE,
             EnumPosition.POS_DEP_BALAYAGE
-        ],
-        1
+        ]
     )
 
     # Ocilating while turning.
@@ -54,8 +51,7 @@ class EnumRoutine(Enum):
             EnumPosition.POS_4_PENDULE,
             EnumPosition.POS_5_PENDULE,
             EnumPosition.POS_ARR_PENDULE
-        ],
-        1
+        ]
     )
 
     # Suspens routine before big start.
@@ -65,8 +61,7 @@ class EnumRoutine(Enum):
             EnumPosition.POS_DEP_WAIT4IT,
             EnumPosition.POS_1_WAIT4IT,
             EnumPosition.POS_ARR_WAIT4IT
-        ],
-        1
+        ]
     )
 
     # Turning while looking to the sky.

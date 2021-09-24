@@ -27,8 +27,7 @@ class Robot():
             EnumPosition.POS_SKYWATCHING,
             EnumRoutine.SKY_MOULINETTE,
             EnumPosition.POS_PLONGEUR,
-            EnumRoutine.SHAKER,
-            EnumRoutine.LOOPING
+            EnumRoutine.SHAKER
         ]
         self.poppy = poppy
 
@@ -74,6 +73,8 @@ class Robot():
         """Execute the choregraphy."""
         # Go to initial position
         self.goPosition(EnumPosition.POS_INIT)
+        # Time start
+        currentTime = time.time()
         # Read each instruction of choregraphy.
         for item in self.choregraphy:
             # Check type of item & use according function.
@@ -81,5 +82,7 @@ class Robot():
                 self.goPosition(item)
             elif (isinstance(item.value, Routine)):
                 self.doRoutine(item)
+        # Print lasting
+        print(time.time() - currentTime)
         # Go backto initial position
         self.goPosition(EnumPosition.POS_INIT)
