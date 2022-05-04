@@ -1,0 +1,39 @@
+@startuml Classes Poppy
+    class Position {
+        - dictionnaryMotor : dict
+        - multiplicatorMover : float
+        - multiplicatorWaiter : float
+    }
+
+    class Robot {
+        - poppy : PoppyErgoJr
+        - choregraphy : List<Position>
+
+        + goPosition(position: EnumPosition)
+        + doRoutine(routine: EnumRoutine)
+        + dance(musicLink : String)
+    }
+    Position *-- Robot
+
+    class Routine {
+        - positionInitial : Position
+        - listPositions : List<Position>
+        - nbRep : int
+    }
+    Position *-- Routine
+
+    class Choregrapher {
+        + createChoregraphy()
+        + findBPM(musicLink : String)
+    }
+    Choregrapher o-- Robot
+
+    class MusicParser {
+        + checkExists(musicLink : String) : boolean
+        + downloadMusic(musicLink : String) : File
+    }
+    MusicParser o-- Choregrapher
+
+    class MusicLoadException
+    MusicLoadException o-- MusicParser
+@enduml
