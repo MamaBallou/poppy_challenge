@@ -19,18 +19,9 @@ except ImportError:
     print("Command: pip install soundfile")
     # Exit the program.
     sys.exit()
-# Try to import the IPython library.
-try:
-    from IPython.display import Audio
-except ImportError:
-    # If the IPython library is not installed, print an error message.
-    print("The IPython library is not installed. Please install it using pip.")
-    print("Command: pip install ipython")
-    # Exit the program.
-    sys.exit()
 # Try to import the numpy library.
 try:
-    import numpy as np
+    from numpy import ndarray
 except ImportError:
     # If the numpy library is not installed, print an error message.
     print("The numpy library is not installed. Please install it using pip.")
@@ -87,20 +78,12 @@ class Music:
         # Calculate the BPM.
         bpm = lr.beat.tempo(y=self.y, sr=self.sr)
         # While bpm is an ndarray, take the first element.
-        while isinstance(bpm, np.ndarray):
+        while isinstance(bpm, ndarray):
             bpm = bpm[0]
         # Round the BPM to the nearest integer.
         bpm = int(round(bpm))
         # Return the BPM.
         return bpm
-
-    def play(self):
-        """
-        This function will play the song.
-        :return: None.
-        """
-        # Play the song.
-        Audio(data=self.y, rate=self.sr)
 
     def convert_to_wav(self):
         """
@@ -133,5 +116,3 @@ if __name__ == "__main__":
     print("Calculate BPM... ", end="")
     # Print the BPM.
     print(music.get_bpm())
-    # Play the song.
-    music.play()
