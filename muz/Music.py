@@ -1,22 +1,40 @@
-"""
-This file will be used to calculate the BPM of a song.
-The song will be read in from an audio file.
-The BPM will be calculated using the BPM algorithm.
-The BPM will be rounded to the nearest integer.
-This script supports one argument: the path to the mp3 file.
-The format of the argument is:
-    python MusicBPM.py <file_path>
-"""
-
-
 import sys
+import io
+import subprocess
 # Try to import the librosa library.
 try:
-    import librosa
+    import librosa as lr
 except ImportError:
     # If the librosa library is not installed, print an error message.
     print("The librosa library is not installed. Please install it using pip.")
     print("Command: pip install librosa")
+    # Exit the program.
+    sys.exit()
+# Try to import the soundfile library.
+try:
+    import soundfile as sf
+except ImportError:
+    # If the soundfile library is not installed, print an error message.
+    print("The soundfile library is not installed. Please install it using pip.")
+    print("Command: pip install soundfile")
+    # Exit the program.
+    sys.exit()
+# Try to import the IPython library.
+try:
+    from IPython.display import Audio
+except ImportError:
+    # If the IPython library is not installed, print an error message.
+    print("The IPython library is not installed. Please install it using pip.")
+    print("Command: pip install ipython")
+    # Exit the program.
+    sys.exit()
+# Try to import the numpy library.
+try:
+    import numpy as np
+except ImportError:
+    # If the numpy library is not installed, print an error message.
+    print("The numpy library is not installed. Please install it using pip.")
+    print("Command: pip install numpy")
     # Exit the program.
     sys.exit()
 
@@ -41,8 +59,14 @@ class Music:
         This function will load the audio file.
         :return: None.
         """
+        # If the audio file is a MP3 file, convert it to a WAV file.
+        if self.get_file_path().endswith(".mp3"):
+            self.convert_to_wav()
+
         # Load the audio file.
-        self.y, self.sr = librosa.load(self.file_path)
+        y, self.sr = sf.read(self.get_file_path())
+        self.y = y.T
+
 
     def get_file_path(self):
         """
@@ -61,9 +85,12 @@ class Music:
         :return: The BPM of the song.
         """
         # Calculate the BPM.
-        bpm = librosa.beat.tempo(y=self.y, sr=self.sr)
+        bpm = lr.beat.tempo(y=self.y, sr=self.sr)
+        # While bpm is an ndarray, take the first element.
+        while isinstance(bpm, np.ndarray):
+            bpm = bpm[0]
         # Round the BPM to the nearest integer.
-        bpm = int(round(bpm[0]))
+        bpm = int(round(bpm))
         # Return the BPM.
         return bpm
 
@@ -73,17 +100,22 @@ class Music:
         :return: None.
         """
         # Play the song.
-        librosa.output.play_wav(self.y, self.sr)
+        Audio(data=self.y, rate=self.sr)
 
     def convert_to_wav(self):
         """
         This function will convert the audio file to a wav file.
         :return: None.
         """
+        ini_file_path = self.get_file_path()
         # Change the file extension to wav.
         self.file_path = self.file_path.replace(".mp3", ".wav")
+        # Tells the user that the file is being converted.
+        print("Converting file...", end="")
         # Convert the audio file to a wav file.
-        librosa.output.write_wav(self.file_path, self.y, self.sr)
+        subprocess.call(["ffmpeg", "-y", "-i", ini_file_path, self.get_file_path()], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        # Tells the user that the file has been converted.
+        print(" Done!")
 
 
 # If the script is run directly, run the main function.
@@ -95,23 +127,11 @@ if __name__ == "__main__":
         # Exit the program.
         sys.exit()
     
-    print("Load Music... ", end="")
     # Create a new Music object.
     music = Music(sys.argv[1])
-    print("Done")
-
-    # If the audio file is a MP3 file, convert it to a WAV file.
-    if music.get_file_path().endswith(".mp3"):
-        print("Convert to WAV... ", end="")
-        music.convert_to_wav()
-        print("Done")
-        print("Load Music... ", end="")
-        # Load the audio file.
-        music.load_file()
-        print("Done")
 
     print("Calculate BPM... ", end="")
     # Print the BPM.
     print(music.get_bpm())
     # Play the song.
-    # music.play()
+    music.play()
