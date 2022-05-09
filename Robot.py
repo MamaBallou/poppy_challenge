@@ -32,6 +32,7 @@ class Robot():
         ]
         self.poppy = poppy
         self.time2move : int 
+        self.nbBeatPerMv : int
 
     def goPosition(self, position: EnumPosition) -> None:
         """To move poppy to Position.
@@ -72,8 +73,12 @@ class Robot():
 
     def dance(self, musicLink: str) -> None:
         """Execute the choregraphy."""
+
+        
+
         # Get time2move convert per second 60/bpm
-        self.time2move = 60.0/Choregrapher().findBPM(musicLink)
+        self.nbBeatPerMv = 2
+        self.time2move = (60.0/Choregrapher().findBPM(musicLink))*self.nbBeatPerMv
         # Go to initial position
         self.goPosition(EnumPosition.POS_INIT)
         # Time start
