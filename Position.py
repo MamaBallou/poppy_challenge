@@ -12,5 +12,3 @@ class Position():
                  time2Wait: int = 0) -> None:
         """Constructor"""
         self.dicMotors = dicMotors
-        self.time2Move = time2Move
-        self.time2Wait = time2Wait
