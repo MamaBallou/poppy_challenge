@@ -97,9 +97,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 90,
             'm6': 0
-        },
-        time2Move=0.75,
-        time2Wait=0
+        }
     )
 
     POS_INTER_02_SHECKER = Position(
@@ -110,9 +108,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 0,
             'm6': 0
-        },
-        time2Move=0.75,
-        time2Wait=0
+        }
     )
 
     POS_INTER_03_SHECKER = Position(
@@ -123,9 +119,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 90,
             'm6': 0
-        },
-        time2Move=0.75,
-        time2Wait=0
+        }
     )
 
     POS_INTER_04_SHECKER = Position(
@@ -136,9 +130,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 0,
             'm6': 0
-        },
-        time2Move=0.75,
-        time2Wait=0
+        }
     )
 
     POS_INTER_05_SHECKER = Position(
@@ -149,9 +141,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 90,
             'm6': 0
-        },
-        time2Move=0.75,
-        time2Wait=0
+        }
     )
 
     POS_ARR_SHECKER = Position(
@@ -162,9 +152,7 @@ class EnumPosition(Enum):
             'm4': 120,
             'm5': 0,
             'm6': 0
-        },
-        time2Move=0.75,
-        time2Wait=0
+        }
     )
 
     # Positions for balayage.
@@ -289,9 +277,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 0,
             'm6': 0
-        },
-        time2Move=1.5,
-        time2Wait=1
+        }
     )
 
     POS_1_WAIT4IT = Position(
@@ -302,9 +288,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 0,
             'm6': 0
-        },
-        time2Move=0.5,
-        time2Wait=0
+        }
     )
 
     POS_ARR_WAIT4IT = Position(
@@ -315,9 +299,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': -45,
             'm6': 0
-        },
-        time2Move=0.5,
-        time2Wait=0
+        }
     )
 
     # Turning while watching the sky.

@@ -8,7 +8,6 @@ class Position():
     :param int time2Wait: Waiting time at the end of deplacement in seconde.
     """
 
-    def __init__(self, dicMotors: dict, time2Move: int,
-                 time2Wait: int = 0) -> None:
+    def __init__(self, dicMotors: dict):
         """Constructor"""
         self.dicMotors = dicMotors
