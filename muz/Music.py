@@ -28,6 +28,15 @@ except ImportError:
     print("Command: pip install numpy")
     # Exit the program.
     sys.exit()
+# Try to import the youtube-dl library.
+try:
+    from youtube_dl import YoutubeDL
+except ImportError:
+    # If the youtube-dl library is not installed, print an error message.
+    print("The youtube-dl library is not installed. Please install it using pip.")
+    print("Command: pip install youtube-dl")
+    # Exit the program.
+    sys.exit()
 
 
 # Now we will make a class "Music" that will load the audio file, calculate the BPM, convert the audio file if not in compatible format and play the music.
@@ -53,6 +62,14 @@ class Music:
         # If the audio file is a MP3 file, convert it to a WAV file.
         if self.get_file_path().endswith(".mp3"):
             self.convert_to_wav()
+        # If the path is a URL
+        if self.is_URL():
+            # If the path is a YouTube URL, download the video.
+            if self.is_YouTube():
+                self.dl_YouTube()
+            # If the path is not a YouTube URL, print an error message.
+            else:
+                print("The path is not a YouTube URL.")
 
         # Load the audio file.
         y, self.sr = sf.read(self.get_file_path())
@@ -99,6 +116,49 @@ class Music:
         subprocess.call(["ffmpeg", "-y", "-i", ini_file_path, self.get_file_path()], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         # Tells the user that the file has been converted.
         print(" Done!")
+
+    def is_URL(self):
+        """
+        This function will check if the path is a URL.
+        :return: True if the path is a URL, False if not.
+        """
+        # If the file path is a URL, return True.
+        if self.get_file_path().startswith("http"):
+            return True
+        # If the file path is not a URL, return False.
+        return False
+
+    def is_YouTube(self):
+        """
+        This function will check if the path is a YouTube URL.
+        :return: True if the path is a YouTube URL, False if not.
+        """
+        # If the file path is a YouTube URL, return True.
+        if self.get_file_path().startswith("https://www.youtube.com"):
+            return True
+        # If the file path is not a YouTube URL, return False.
+        return False
+    
+    def dl_YouTube(self):
+        """
+        This function will download the YouTube video.
+        :return: None.
+        """
+        # Create a YoutubeDL object.
+        ydl_opts = {
+            'format': 'bestaudio/best',
+            'postprocessors': [{
+                'key': 'FFmpegExtractAudio',
+                'preferredcodec': 'wav',
+                'preferredquality': '192',
+            }],
+            'outtmpl': 'music.%(ext)s',
+        }
+        with YoutubeDL(ydl_opts) as ydl:
+            # Download the video.
+            ydl.download([self.get_file_path()])
+            # Set the file path to the downloaded video.
+            self.file_path = "./music.wav"
 
 
 # If the script is run directly, run the main function.
