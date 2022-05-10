@@ -41,20 +41,24 @@ class Robot():
         """
         print("goPosition(%s)", position.name)
         # Extracting Position from EnumPosition
-        pos = position.value
+        pos: Position = position.value
         # Making motors move and last wait its end to continu program.
+        multiplicatorTime2move = pos.minSec // self.time2move
+        if (pos.minSec % self.time2move):
+            multiplicatorTime2move += 1
+        time2move = self.time2move * multiplicatorTime2move
         self.poppy.m1.goto_position(
-            pos.dicMotors["m1"], self.time2move)
+            pos.dicMotors["m1"], time2move)
         self.poppy.m2.goto_position(
-            pos.dicMotors["m2"], self.time2move)
+            pos.dicMotors["m2"], time2move)
         self.poppy.m3.goto_position(
-            pos.dicMotors["m3"], self.time2move)
+            pos.dicMotors["m3"], time2move)
         self.poppy.m4.goto_position(
-            pos.dicMotors["m4"], self.time2move)
+            pos.dicMotors["m4"], time2move)
         self.poppy.m5.goto_position(
-            pos.dicMotors["m5"], self.time2move)
+            pos.dicMotors["m5"], time2move)
         self.poppy.m6.goto_position(
-            pos.dicMotors["m6"], self.time2move, wait=True)
+            pos.dicMotors["m6"], time2move, wait=True)
         # Wait the designated time.
 
     def doRoutine(self, routine: EnumRoutine) -> None:

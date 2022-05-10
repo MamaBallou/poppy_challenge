@@ -3,6 +3,7 @@ from EnumPosition import EnumPosition
 from EnumPossibilite import EnumPossibilite
 from Position import Position
 from Routine import Routine
+from copy import copy
 import random
 
 class Choregrapher():
@@ -16,16 +17,15 @@ class Choregrapher():
     def createChoregraphy(self, musicLink : str) -> list:
         bpm = self.findBPM(musicLink)
         musicLength = 60
-        positionsList = [EnumPosition.POS_INIT]
+        positionsList = [copy(EnumPosition.POS_INIT)]
         execTime = EnumPosition.POS_INIT.time2Wait + EnumPosition.POS_INIT.time2Move * 2
 
-        while(execTime < musicLength):    
+        while(execTime < musicLength):
             possibleMoveList = [item for item in EnumPossibilite.POSSIBILITIES if 1 in item]
             itemId = random.randint(0, len(possibleMoveList)-1)
-            positionList.append(possibleMoveList[itemId])
+            positionsList.append(copy(possibleMoveList[itemId]))
             execTime += possibleMoveList[itemId].time2Move + possibleMoveList[itemId].time2Wait #voir pour récupérer time2mode & time2Wait depuis Routine (fonction ?)
-            
-        return positionList
+        return positionsList
 
     def findBPM(self, musicLink : str) -> int:
         return 132 
