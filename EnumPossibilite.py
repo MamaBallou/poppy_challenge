@@ -9,5 +9,6 @@ class EnumPossibilite(Enum):
     """Enumeration of all possibilities of movements from on Position/Routine
     to another"""
     POSSIBILITIES = [
-        (EnumRoutine.BALAYAGE, EnumPosition.POS_REVERSE)
+        (EnumRoutine.BALAYAGE, EnumPosition.POS_REVERSE),
+        (EnumPosition.POS_INIT, EnumRoutine.BALAYAGE)
     ]

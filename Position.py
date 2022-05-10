@@ -11,4 +11,4 @@ class Position():
     def __init__(self, dicMotors: dict):
         """Constructor"""
         self.dicMotors = dicMotors
-        self.minSec : float
+        self.minSec: float = 0.0

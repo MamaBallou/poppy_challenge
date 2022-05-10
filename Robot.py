@@ -1,5 +1,6 @@
 # coding: utf8
 
+from numpy import array
 from Choregrapher import Choregrapher
 from Routine import Routine
 from Position import Position
@@ -19,19 +20,9 @@ class Robot():
     def __init__(self, poppy: PoppyErgoJr) -> None:
         """Constructor"""
         print(dir(EnumPosition.POS_INIT))
-        self.choregraphy = [
-            EnumRoutine.WAIT4IT,
-            EnumRoutine.BALAYAGE,
-            EnumRoutine.LOOPING,
-            EnumPosition.POS_REVERSE,
-            EnumRoutine.PENDULE,
-            EnumPosition.POS_SKYWATCHING,
-            EnumRoutine.SKY_MOULINETTE,
-            EnumPosition.POS_PLONGEUR,
-            EnumRoutine.SHAKER
-        ]
+        self.choregraphy = list
         self.poppy = poppy
-        self.time2move : int 
+        self.time2move = float 
         self.nbBeatPerMv : int
 
     def goPosition(self, position: EnumPosition) -> None:
@@ -41,11 +32,15 @@ class Robot():
         """
         print("goPosition(%s)", position.name)
         # Extracting Position from EnumPosition
-        pos: Position = position.value
+        pos = position.value
         # Making motors move and last wait its end to continu program.
-        multiplicatorTime2move = pos.minSec // self.time2move
+        multiplicatorTime2move = float(pos.minSec) // float(self.time2move)
+        print("minSec: ", pos.minSec)
+        print("time2move: ", self.time2move)
+        print("multiplicatorTime2move: ", multiplicatorTime2move)
         if (pos.minSec % self.time2move):
             multiplicatorTime2move += 1
+        print("multiplicatorTime2move: ", multiplicatorTime2move)
         time2move = self.time2move * multiplicatorTime2move
         self.poppy.m1.goto_position(
             pos.dicMotors["m1"], time2move)
@@ -77,12 +72,10 @@ class Robot():
 
     def dance(self, musicLink: str) -> None:
         """Execute the choregraphy."""
-
-        
-
         # Get time2move convert per second 60/bpm
         self.nbBeatPerMv = 2
         self.time2move = (60.0/Choregrapher().findBPM(musicLink))*self.nbBeatPerMv
+        self.choregraphy = Choregrapher().createChoregraphy(musicLink)
         # Go to initial position
         self.goPosition(EnumPosition.POS_INIT)
         # Time start

@@ -17,14 +17,19 @@ class Choregrapher():
     def createChoregraphy(self, musicLink : str) -> list:
         bpm = self.findBPM(musicLink)
         musicLength = 60
+        previous = EnumPosition.POS_INIT
         positionsList = [copy(EnumPosition.POS_INIT)]
         execTime = EnumPosition.POS_INIT.time2Wait + EnumPosition.POS_INIT.time2Move * 2
 
         while(execTime < musicLength):
-            possibleMoveList = [item for item in EnumPossibilite.POSSIBILITIES if 1 in item]
+            possibleMoveList = [item for item in EnumPossibilite.POSSIBILITIES if previous in item]
             itemId = random.randint(0, len(possibleMoveList)-1)
-            positionsList.append(copy(possibleMoveList[itemId]))
+            if(previous == possibleMoveList[itemId][0]):
+                positionsList.append(copy(possibleMoveList[itemId][1]))
+            else:
+                positionsList.append(copy(possibleMoveList[itemId][0]))
             execTime += possibleMoveList[itemId].time2Move + possibleMoveList[itemId].time2Wait #voir pour récupérer time2mode & time2Wait depuis Routine (fonction ?)
+        self.calBPMChoregraphy(positionsList)
         return positionsList
 
     def findBPM(self, musicLink : str) -> int:
@@ -57,3 +62,4 @@ class Choregrapher():
         # Set value move
         # Magic start here :) 
         pos2.minSec = maxSec
+        print("ICI !! : ", pos2.minSec)
