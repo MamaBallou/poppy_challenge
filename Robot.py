@@ -34,7 +34,7 @@ class Robot():
         # Extracting Position from EnumPosition
         pos = position.value
         # Making motors move and last wait its end to continu program.
-        multiplicatorTime2move = float(pos.minSec) // float(self.time2move)
+        multiplicatorTime2move = float(self.time2move) // float(pos.minSec)
         print("minSec: ", pos.minSec)
         print("time2move: ", self.time2move)
         print("multiplicatorTime2move: ", multiplicatorTime2move)

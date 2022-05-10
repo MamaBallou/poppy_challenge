@@ -17,35 +17,36 @@ class Choregrapher():
     def createChoregraphy(self, musicLink : str) -> list:
         bpm = self.findBPM(musicLink)
         musicLength = 60
-        previous = EnumPosition.POS_INIT
+        previous: Position = EnumPosition.POS_INIT
         positionsList = [copy(EnumPosition.POS_INIT)]
-        execTime = EnumPosition.POS_INIT.time2Wait + EnumPosition.POS_INIT.time2Move * 2
+        execTime: float = 0.0
 
         while(execTime < musicLength):
             possibleMoveList = [item for item in EnumPossibilite.POSSIBILITIES if previous in item]
             itemId = random.randint(0, len(possibleMoveList)-1)
             if(previous == possibleMoveList[itemId][0]):
-                positionsList.append(copy(possibleMoveList[itemId][1]))
+                next = copy(possibleMoveList[itemId][1])
+                positionsList.append(next)
+                self.checkAndCalcBPMForPositionOrRoutine(previous, next, possibleMoveList[itemId][1])
             else:
-                positionsList.append(copy(possibleMoveList[itemId][0]))
+                next = copy(possibleMoveList[itemId][0])
+                positionsList.append(next)
+                self.checkAndCalcBPMForPositionOrRoutine(previous, next, possibleMoveList[itemId][0])
             # TODO: enlever les mauvais truc et voir pour calculer le temps de déplacement au fur et à mesure plutôt et dans Robot
-            execTime += possibleMoveList[itemId].time2Move + possibleMoveList[itemId].time2Wait #voir pour récupérer time2mode & time2Wait depuis Routine (fonction ?)
-        self.calBPMChoregraphy(positionsList)
+            execTime += possibleMoveList[itemId].time2Move #voir pour récupérer time2mode & time2Wait depuis Routine (fonction ?)
         return positionsList
 
     def findBPM(self, musicLink : str) -> int:
         return 132 
 
-    def calBPMChoregraphy(self, choregraphy: tuple) -> None:
-        previous = EnumPosition.POS_INIT.value.dicMotors
-        for move in choregraphy:
-            if(type(move) == Position):
-                self.calBPMPerPosition(previous, move)
-                previous = move
-            elif(type(move) == Routine):
-                for pos in move.lisPos:
-                    self.calBPMPerPosition(previous, pos)
-                    previous = pos
+    def checkAndCalcBPMForPositionOrRoutine(self, previous: Position, next, templateNext) -> None:
+        if(type(next) == Position):
+            self.calBPMPerPosition(previous, next)
+            previous = templateNext
+        elif(type(next) == Routine):
+            for count, pos in enumerate(next.lisPos):
+                self.calBPMPerPosition(previous, pos)
+                previous = templateNext.lisPos[count]
 
         
         #temps/bpm pour rappel
