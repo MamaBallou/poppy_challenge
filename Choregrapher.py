@@ -28,6 +28,7 @@ class Choregrapher():
                 positionsList.append(copy(possibleMoveList[itemId][1]))
             else:
                 positionsList.append(copy(possibleMoveList[itemId][0]))
+            # TODO: enlever les mauvais truc et voir pour calculer le temps de déplacement au fur et à mesure plutôt et dans Robot
             execTime += possibleMoveList[itemId].time2Move + possibleMoveList[itemId].time2Wait #voir pour récupérer time2mode & time2Wait depuis Routine (fonction ?)
         self.calBPMChoregraphy(positionsList)
         return positionsList
