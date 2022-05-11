@@ -26,34 +26,36 @@ class Choregrapher():
         execTime: float = 0.0
         rep = 0
 
-        while(execTime < musicLength and rep < 10):
+        while(execTime < musicLength):
             rep += 1
             possibleMoveList: list[tuple] = [item for item in EnumPossibilite.POSSIBILITIES.value if previous in item]
             itemId = random.randint(0, len(possibleMoveList)-1)
             if(previous == possibleMoveList[itemId][0]):
                 next = copy(possibleMoveList[itemId][1].value)
                 positionsList.append(next)
-                execTime += self.checkAndCalcBPMForPositionOrRoutine(previous.value, next, possibleMoveList[itemId][1].value)
+                execTime += self.checkAndCalcBPMForPositionOrRoutine(previous.value, next)
                 previous = possibleMoveList[itemId][1]
             else:
                 next = copy(possibleMoveList[itemId][0].value)
                 positionsList.append(next)
-                execTime += self.checkAndCalcBPMForPositionOrRoutine(previous.value, next, possibleMoveList[itemId][0].value)
+                execTime += self.checkAndCalcBPMForPositionOrRoutine(previous.value, next)
                 previous = possibleMoveList[itemId][0]
         return positionsList
 
     def findBPM(self, musicLink : str) -> int:
-        return 132 
+        return 132
 
     def checkAndCalcBPMForPositionOrRoutine(self, previous, next) -> float:
+        if(isinstance(previous, Routine)):
+            previous = previous.lisPos[len(previous.lisPos) - 1].value
         previous = copy(previous)
         execTime: float = 0.0
         if(isinstance(next, Position)):
             execTime += self.calBPMPerPosition(previous, next)
         elif(isinstance(next, Routine)):
             for pos in next.lisPos:
-                execTime += self.calBPMPerPosition(previous, pos)
-                previous = pos
+                execTime += self.calBPMPerPosition(previous, pos.value)
+                previous = pos.value
         # temps/bpm pour rappel
         return execTime
     
@@ -74,4 +76,5 @@ class Choregrapher():
         if (maxSec % self.secondPerBPM):
             multiplicatorTime2move += 1
         pos2.time2move = float(self.secondPerBPM) * float(multiplicatorTime2move)
+        print("time2move: ", pos2.time2move)
         return pos2.time2move
