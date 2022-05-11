@@ -13,13 +13,13 @@ from EnumRoutine import EnumRoutine
 class Robot():
     """This is the Robot and its movements.
 
-    :param list choregraphy: List of Routine & Position representing.
+    :param list[Position|Routine] choregraphy: List of Routine & Position representing the choregraphy.
     :param PoppyErgoJr poppy: PoppyErgoJr robot object.
     """
 
     def __init__(self, poppy: PoppyErgoJr) -> None:
         """Constructor"""
-        self.choregraphy = list
+        self.choregraphy = list[Position|Routine]
         self.poppy = poppy
 
     def goPosition(self, position: Position) -> None:
