@@ -324,3 +324,6 @@ class EnumPosition(Enum):
             'm6': 0
         }
     )
+
+    def __str__ (self):
+        return self.value.__str__()

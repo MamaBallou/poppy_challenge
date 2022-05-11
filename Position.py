@@ -12,3 +12,6 @@ class Position():
         """Constructor"""
         self.dicMotors = dicMotors
         self.time2move: float = 0.0
+    
+    def __str__(self):
+        return f'dictMotor : {self.dicMotors}\ntime2move : {self.time2move}'
