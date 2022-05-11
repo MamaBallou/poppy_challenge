@@ -19,7 +19,7 @@ class Robot():
 
     def __init__(self, poppy: PoppyErgoJr) -> None:
         """Constructor"""
-        self.choregraphy = list[Position|Routine]
+        self.choregraphy = list
         self.poppy = poppy
 
     def goPosition(self, position: Position) -> None:
