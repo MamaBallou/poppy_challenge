@@ -51,8 +51,7 @@ class Robot():
         for _ in range(routine.nbRep):
             # Going threw each steps of the routine.
             for pos in routine.lisPos:
-                print(pos)
-                self.goPosition(pos)
+                self.goPosition(pos.value)
 
     def dance(self, musicLink: str) -> None:
         """Execute the choregraphy."""
@@ -72,4 +71,4 @@ class Robot():
         # Print lasting
         print(time.time() - currentTime)
         # Go backto initial position
-        self.goPosition(EnumPosition.POS_INIT)
+        self.goPosition(EnumPosition.POS_INIT.value)
