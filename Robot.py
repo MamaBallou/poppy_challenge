@@ -80,11 +80,11 @@ class Robot():
             if (isinstance(item, Position)):
                 self.goPosition(item)
                 for m in self.poppy.motors:
-                    self.poppy.m.led=random.choice(self.listLed)
+                    m.led=random.choice(self.listLed)
             elif (isinstance(item, Routine)):
                 self.doRoutine(item)
                 for m in self.poppy.motors:
-                    self.poppy.m.led=random.choice(self.listLed)
+                    m.led=random.choice(self.listLed)
         # Print lasting
         print(time.time() - currentTime)
         # Go backto initial position

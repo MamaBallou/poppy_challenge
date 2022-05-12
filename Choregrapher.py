@@ -69,6 +69,8 @@ class Choregrapher():
             minMotor = abs(mot1[motor] - mot2[motor]) / self.DPS_MOTOR
             if(minMotor > maxSec):
                 maxSec = minMotor
+        if(maxSec == 0):
+            maxSec = 1
         # Set value move
         # Magic start here :) 
         # Ajouter le calcul
