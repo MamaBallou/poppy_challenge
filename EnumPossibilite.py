@@ -22,5 +22,5 @@ class EnumPossibilite(Enum):
         (EnumPosition.POS_REVERSE, EnumRoutine.PENDULE),
         (EnumPosition.POS_SKYWATCHING, EnumRoutine.PENDULE),
         (EnumRoutine.PENDULE, EnumRoutine.SHAKER),
-        (EnumPosition.POS_ARR_SKYMOULINETTE, EnumPosition.POS_PLONGEUR)
+        (EnumRoutine.SKY_MOULINETTE, EnumPosition.POS_PLONGEUR)
     ]
