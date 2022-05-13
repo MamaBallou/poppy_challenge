@@ -2,6 +2,7 @@ import sys
 import io
 import subprocess
 # Try to import the librosa library.
+# Source: https://librosa.org/doc/latest/index.html
 try:
     import librosa as lr
 except ImportError:
@@ -11,6 +12,7 @@ except ImportError:
     # Exit the program.
     sys.exit()
 # Try to import the soundfile library.
+# Source: https://pysoundfile.readthedocs.io/en/latest/
 try:
     import soundfile as sf
 except ImportError:
@@ -20,6 +22,7 @@ except ImportError:
     # Exit the program.
     sys.exit()
 # Try to import the numpy library.
+# Source: https://numpy.org/
 try:
     from numpy import ndarray
 except ImportError:
@@ -29,6 +32,7 @@ except ImportError:
     # Exit the program.
     sys.exit()
 # Try to import the youtube-dl library.
+# Source: https://rg3.github.io/youtube-dl/
 try:
     from youtube_dl import YoutubeDL
 except ImportError:
