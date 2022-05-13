@@ -13,7 +13,8 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 0,
             'm6': 0
-        }
+        },
+        time2move=4.0
     )
 
     # Reverse position, head upside down.
