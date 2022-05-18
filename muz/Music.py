@@ -164,6 +164,14 @@ class Music:
             # Set the file path to the downloaded video.
             self.file_path = "./music.wav"
 
+    def play(self):
+        """
+        This function will play the music.
+        :return: None.
+        """
+        # Play the music with ffmpeg.
+        subprocess.call(["ffplay", self.get_file_path()])
+
 
 # If the script is run directly, run the main function.
 if __name__ == "__main__":
@@ -180,3 +188,7 @@ if __name__ == "__main__":
     print("Calculate BPM... ", end="")
     # Print the BPM.
     print(music.get_bpm())
+    print("Play music... ", end="")
+    # Play the music.
+    music.play()
+    print("Done!")
