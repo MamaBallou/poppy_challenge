@@ -7,44 +7,75 @@ A3 FISE 2021-2022
 * MARGOT Louis
 * THOMAS Maxime
 
+## Description :
+This is a project for the challenge of IBM. The goal is to control the poppy robot and to make it dance !
 
+Poppy will dance automatically to the tempo of a given music (path to file or URL to Youtube).
 
-## Choregraphy
-1. Pos Init 
-2. wait(16s)
-### Start !
-### Wait for it... 6s
-1. Montée 3s, 1s
-2. Descente 1 1s
-3. Descente 2 1s
-### Balayage 5s
-3. Pos init balayage 1s, 0s
-4. Pos 1 balayage 1s, 0s
-5. Pos 2 balayage 2s, 0s 
-6. Pos init balayage 1s, 0s
-### Looping 2s
-7. Pos init looping 1s, 0s
-8. Pos 1 looping 1s, 0
-### Shaker 8s
-13. Pos init 3s, 0s
-14. Pos 1 1s, 0s
-15. Pos 2 1s, 0s
-15. Pos 3 1s, 0s
-16. Pos 4 1s, 0s
-17. Pos 5 1s, 0s
-### Sky watching 5s
-10. Pos init Sky watching 2s, 3s
-### Sky moulinette 3s
-11. pos init sky watching pivoté 1s, 0s
-12. pos retour sky watching pigoté 2s, 0s
-### Pendule 3.5s
-18. Pos init 1s
-14. Pos 1 1s, 0s
-15. Pos 2 1s, 0s
-15. Pos 3 1s, 0s
-16. Pos 4 1s, 0s
-17. Pos 5 1s, 0s
-### Plongeur 4s
-19. Pos 2s, 2s
-### Reverse 5s 44s
-20. Pos 2s, 3s
+The moves of poppy are predefined in the code. He will choose the move that will be the best for him.
+
+## Prerequisites :
+### FFmpeg
+#### Debian 9 or later
+To install FFmpeg, you can use the following command:
+```
+sudo apt-get install ffmpeg
+```
+
+To check if FFmpeg is installed, you can use the following command:
+```
+ffmpeg -version
+```
+
+And then you can use the following command to install the dependencies:
+```
+sudo apt-get install ffmpeg-tools
+```
+
+Source: [https://www.ffmpeg.org/download.html](https://www.ffmpeg.org/download.html)
+
+### Python pip
+To install Python pip, you can use the following command:
+```
+sudo apt-get install python-pip
+```
+
+To check if Python pip is installed, you can use the following command:
+```
+pip -V
+```
+
+Source: [https://pip.pypa.io/en/stable/installing/](https://pip.pypa.io/en/stable/installing/)
+
+### Python modules
+#### librosa
+To install librosa, you can use the following command:
+```
+pip install librosa
+```
+
+Source: [https://librosa.org/doc/latest/index.html](https://librosa.org/doc/latest/index.html)
+
+#### soundfile
+To install soundfile, you can use the following command:
+```
+pip install soundfile
+```
+
+Source: [https://pysoundfile.readthedocs.io/en/latest/](https://pysoundfile.readthedocs.io/en/latest/)
+
+#### numpy
+To install numpy, you can use the following command:
+```
+pip install numpy
+```
+
+Source: [https://www.numpy.org/](https://www.numpy.org/)
+
+#### youtube_dl
+To install youtube_dl, you can use the following command:
+```
+pip install youtube_dl
+```
+
+Source: [https://rg3.github.io/youtube-dl/](https://rg3.github.io/youtube-dl/)
