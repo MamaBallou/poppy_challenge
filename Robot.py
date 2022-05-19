@@ -1,5 +1,6 @@
 # coding: utf8
 
+from Music import Music
 from numpy import array
 from Choregrapher import Choregrapher
 from Routine import Routine
@@ -74,6 +75,8 @@ class Robot():
         self.goPosition(EnumPosition.POS_INIT.value)
         # Time start
         currentTime = time.time()
+        music:Music = Music(musicLink)
+        music.play()
         # Read each instruction of choregraphy.
         for item in self.choregraphy:
             # Check type of item & use according function.

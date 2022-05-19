@@ -4,6 +4,7 @@ from EnumPossibilite import EnumPossibilite
 from EnumRoutine import EnumRoutine
 from Position import Position
 from Routine import Routine
+from Music import Music
 from copy import copy
 import random
 
@@ -43,7 +44,8 @@ class Choregrapher():
         return positionsList
 
     def findBPM(self, musicLink : str) -> int:
-        return 132
+        music : Music = Music(musicLink)
+        return music.get_bpm()
 
     def checkAndCalcBPMForPositionOrRoutine(self, previous, next) -> float:
         if(isinstance(previous, Routine)):
