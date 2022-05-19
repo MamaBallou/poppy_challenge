@@ -13,9 +13,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 0,
             'm6': 0
-        },
-        time2Move=3,
-        time2Wait=2
+        }
     )
 
     # Reverse position, head upside down.
@@ -27,9 +25,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': -90,
             'm6': 0
-        },
-        time2Move=0.1,
-        time2Wait=3
+        }
     )
 
     # Sky watching, looking to the sky.
@@ -41,9 +37,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': -90,
             'm6': 0
-        },
-        time2Move=2,
-        time2Wait=3
+        }
     )
 
     # Looking to the sky in diagonal.
@@ -55,9 +49,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': -45,
             'm6': 0
-        },
-        time2Move=2,
-        time2Wait=2
+        }
     )
 
     # Start head up to end head down.
@@ -69,9 +61,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 90,
             'm6': 0
-        },
-        time2Move=1,
-        time2Wait=0
+        }
     )
 
     POS_ARR_LOOPING = Position(
@@ -82,9 +72,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': -90,
             'm6': 0
-        },
-        time2Move=1,
-        time2Wait=0
+        }
     )
 
     # the position order of the shecker
@@ -97,9 +85,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 0,
             'm6': 0
-        },
-        time2Move=3,
-        time2Wait=0
+        }
     )
 
     # The sheck stences
@@ -111,9 +97,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 90,
             'm6': 0
-        },
-        time2Move=0.75,
-        time2Wait=0
+        }
     )
 
     POS_INTER_02_SHECKER = Position(
@@ -124,9 +108,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 0,
             'm6': 0
-        },
-        time2Move=0.75,
-        time2Wait=0
+        }
     )
 
     POS_INTER_03_SHECKER = Position(
@@ -137,9 +119,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 90,
             'm6': 0
-        },
-        time2Move=0.75,
-        time2Wait=0
+        }
     )
 
     POS_INTER_04_SHECKER = Position(
@@ -150,9 +130,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 0,
             'm6': 0
-        },
-        time2Move=0.75,
-        time2Wait=0
+        }
     )
 
     POS_INTER_05_SHECKER = Position(
@@ -163,9 +141,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 90,
             'm6': 0
-        },
-        time2Move=0.75,
-        time2Wait=0
+        }
     )
 
     POS_ARR_SHECKER = Position(
@@ -176,9 +152,7 @@ class EnumPosition(Enum):
             'm4': 120,
             'm5': 0,
             'm6': 0
-        },
-        time2Move=0.75,
-        time2Wait=0
+        }
     )
 
     # Positions for balayage.
@@ -191,9 +165,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': -90,
             'm6': 0
-        },
-        time2Move=1,
-        time2Wait=0
+        }
     )
 
     POS_1_BALAYAGE = Position(
@@ -204,9 +176,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': -90,
             'm6': 0
-        },
-        time2Move=2,
-        time2Wait=0
+        }
     )
 
     POS_ARR_BALAYAGE = Position(
@@ -217,9 +187,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': -90,
             'm6': 0
-        },
-        time2Move=2,
-        time2Wait=0
+        }
     )
 
     # Ocilating while turning.
@@ -231,9 +199,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': -90,
             'm6': 0
-        },
-        time2Move=1,
-        time2Wait=1
+        }
     )
 
     POS_1_PENDULE = Position(
@@ -244,9 +210,7 @@ class EnumPosition(Enum):
             'm4': 90,
             'm5': -90,
             'm6': 0
-        },
-        time2Move=1,
-        time2Wait=0
+        }
     )
 
     POS_2_PENDULE = Position(
@@ -257,9 +221,7 @@ class EnumPosition(Enum):
             'm4': -90,
             'm5': -90,
             'm6': 0
-        },
-        time2Move=1,
-        time2Wait=0
+        }
     )
 
     POS_3_PENDULE = Position(
@@ -270,9 +232,7 @@ class EnumPosition(Enum):
             'm4': 90,
             'm5': -90,
             'm6': 0
-        },
-        time2Move=1,
-        time2Wait=0
+        }
     )
 
     POS_4_PENDULE = Position(
@@ -283,9 +243,7 @@ class EnumPosition(Enum):
             'm4': -90,
             'm5': -90,
             'm6': 0
-        },
-        time2Move=1,
-        time2Wait=0
+        }
     )
 
     POS_5_PENDULE = Position(
@@ -296,9 +254,7 @@ class EnumPosition(Enum):
             'm4': 90,
             'm5': -90,
             'm6': 0
-        },
-        time2Move=1,
-        time2Wait=0
+        }
     )
 
     POS_ARR_PENDULE = Position(
@@ -309,9 +265,7 @@ class EnumPosition(Enum):
             'm4': -90,
             'm5': -90,
             'm6': 0
-        },
-        time2Move=1,
-        time2Wait=0
+        }
     )
 
     # Suspens positions before the big start.
@@ -323,9 +277,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 0,
             'm6': 0
-        },
-        time2Move=1.5,
-        time2Wait=1
+        }
     )
 
     POS_1_WAIT4IT = Position(
@@ -336,9 +288,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': 0,
             'm6': 0
-        },
-        time2Move=0.5,
-        time2Wait=0
+        }
     )
 
     POS_ARR_WAIT4IT = Position(
@@ -349,9 +299,7 @@ class EnumPosition(Enum):
             'm4': 0,
             'm5': -45,
             'm6': 0
-        },
-        time2Move=0.5,
-        time2Wait=0
+        }
     )
 
     # Turning while watching the sky.
@@ -363,9 +311,7 @@ class EnumPosition(Enum):
             'm4': 90,
             'm5': -90,
             'm6': 0
-        },
-        time2Move=1,
-        time2Wait=0
+        }
     )
 
     POS_ARR_SKYMOULINETTE = Position(
@@ -376,7 +322,8 @@ class EnumPosition(Enum):
             'm4': -90,
             'm5': -90,
             'm6': 0
-        },
-        time2Move=2,
-        time2Wait=0
+        }
     )
+
+    def __str__ (self):
+        return self.value.__str__()

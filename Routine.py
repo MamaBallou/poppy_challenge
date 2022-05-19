@@ -10,7 +10,7 @@ class Routine():
     :param int npRep: Number of time the routine is repeated."""
 
     def __init__(self, posInit: Position, lisPos: list,
-                 nbRep: int = 1) -> None:
+                 nbRep: int = 1):
         """Constructor"""
         self.lisPos = lisPos
         self.posInit = posInit

@@ -3,6 +3,7 @@
         - dictionnaryMotor : dict
         - multiplicatorMover : float
         - multiplicatorWaiter : float
+        // lumières
     }
 
     class Robot {
